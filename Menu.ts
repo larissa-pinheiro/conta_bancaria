@@ -1,9 +1,25 @@
 import readlinesync = require('readline-sync');
+import { ContaCorrente } from './src/model/ContaCorrente';
+import { ContaPoupanca } from './src/model/ContaPoupanca';
 import { colors } from './src/util/Colors';
 
 export function main() {
 
   let opcao: number;
+
+  const contacorrente: ContaCorrente = new ContaCorrente(1, 123, 2, "Tonya", 15000, 1000);
+  contacorrente.visualizar();
+  contacorrente.sacar(3000);
+  contacorrente.visualizar();
+  contacorrente.depositar(200);
+  contacorrente.visualizar();
+
+  const contapoupanca: ContaPoupanca= new ContaPoupanca(2, 123, 3, "Drew", 2000, 20);
+  contapoupanca.visualizar();
+  contapoupanca.sacar(400);
+  contapoupanca.visualizar();
+  contapoupanca.depositar(500);
+  contapoupanca.visualizar();
 
   while (true) {
 
